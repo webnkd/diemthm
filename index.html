@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+
+    <link href="/main.css" rel="stylesheet">
+
+    <script src="/fontawesome//js/all.min.js"></script>
+
+    <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+    <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+    <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="" method="post" id="form_tt" name="form_tt">
+            <div class="heading">
+                TÍNH ĐIỂM THEO TỔ HỢP MÔN
+            </div>
+
+            <div class="thongtin">
+                    <div class="thongtin_field">
+                        <div class="thongtin_field_label">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <input type="text" id="hoten" name="hoten" class="thongtin_field_input" placeholder="Họ và tên" required>
+                    </div>
+                    <div class="thongtin_field">
+                        <div class="thongtin_field_label">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <input type="text" id="sdt" name="sdt" class="thongtin_field_input" placeholder="Số điện thoại" required>
+                    </div>
+            </div>
+            
+            <div class="diem">
+                <div class="diem_nhap">
+                    <div class="diem_field">
+                        <div class="diem_field_ut_label">Khu vực</div>
+                        <select class="diem_field_ut_input" name="kv" id="kv" >
+                            <option value="3">KV3
+                            <option value="2">KV2
+                            <option value="2NT">KV2NT
+                            <option value="1">KV1
+                        </select>
+                    </div>
+                    <div class="diem_field">
+                        <div class="diem_field_ut_label">Đối Tượng</div>
+                        <select class="diem_field_ut_input" name="dt" id="dt" >
+                            <option value="00">HSPT
+                            <option value="01">01
+                            <option value="02">02
+                            <option value="03">03
+                            <option value="04">04
+                            <option value="05">05
+                            <option value="06">06
+                            <option value="07">07
+                        </select>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="toan">Toán</label>
+                        <input class="diem_field_input" type="text" id="toan" name="toan" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="li">Lí</label>
+                        <input class="diem_field_input" type="text" id="li" name="li" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="hoa">Hóa</label>
+                        <input class="diem_field_input" type="text" id="hoa" name="hoa" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="sinh">Sinh</label>
+                        <input class="diem_field_input" type="text" id="sinh" name="sinh" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="van">Văn</label>
+                        <input class="diem_field_input" type="text" id="van" name="van" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="su">Sử</label>
+                        <input class="diem_field_input" type="text" id="su" name="su" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="dia">Địa</label>
+                        <input class="diem_field_input" type="text" id="dia" name="dia" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="anh">Anh</label>
+                        <input class="diem_field_input" type="text" id="anh" name="anh" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label" for="gdcd">GDCD</label>
+                        <input class="diem_field_input" type="text" id="gdcda" name="gdcd" placeholder="0.00" onchange="checkNumber()" />
+                    </div>
+                    <div class="diem_field">
+                        <button class="btn" type="submit" value="">Tính điểm</button>
+                    </div>
+                </div>
+                
+                <div class="diem_xuat">
+                    <div class="diem_field">
+                        <label class="diem_field_label">A00</label>
+                        <label class="diem_field_label_dthm" id="A001"></label>
+                        <label class="diem_field_label_dxt" id="A002"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">A01</label>
+                        <label class="diem_field_label_dthm" id="A011"></label>
+                        <label class="diem_field_label_dxt" id="A012"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">B00</label>
+                        <label class="diem_field_label_dthm" id="B001"></label>
+                        <label class="diem_field_label_dxt" id="B002"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">C00</label>
+                        <label class="diem_field_label_dthm" id="C001"></label>
+                        <label class="diem_field_label_dxt" id="C002"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">C01</label>
+                        <label class="diem_field_label_dthm" id="C011"></label>
+                        <label class="diem_field_label_dxt" id="C012"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">C02</label>
+                        <label class="diem_field_label_dthm" id="C021"></label>
+                        <label class="diem_field_label_dxt" id="C022"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">C08</label>
+                        <label class="diem_field_label_dthm" id="C081"></label>
+                        <label class="diem_field_label_dxt" id="C082"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D01</label>
+                        <label class="diem_field_label_dthm" id="D011"></label>
+                        <label class="diem_field_label_dxt" id="D012"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D07</label>
+                        <label class="diem_field_label_dthm" id="D071"></label>
+                        <label class="diem_field_label_dxt" id="D072"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D14</label>
+                        <label class="diem_field_label_dthm" id="D141"></label>
+                        <label class="diem_field_label_dxt" id="D142"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D15</label>
+                        <label class="diem_field_label_dthm" id="D151"></label>
+                        <label class="diem_field_label_dxt" id="D152"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D90</label>
+                        <label class="diem_field_label_dthm" id="D901"></label>
+                        <label class="diem_field_label_dxt" id="D902"></label>
+                    </div>
+                    <div class="diem_field">
+                        <label class="diem_field_label">D96</label>
+                        <label class="diem_field_label_dthm" id="D961"></label>
+                        <label class="diem_field_label_dxt" id="D962"></label>
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </form>
+
+    </div>
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
