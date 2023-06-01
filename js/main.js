@@ -135,19 +135,19 @@ form.addEventListener("submit", (e) => {
     let D96 = Math.round((toan + anh + khxh) * 100) / 100;
 
     // Gán điểm THM
-    document.getElementById("A001").innerText = A00;
-    document.getElementById("A011").innerText = A01;
-    document.getElementById("B001").innerText = B00;
-    document.getElementById("C001").innerText = C00;
-    document.getElementById("C011").innerText = C01;
-    document.getElementById("C021").innerText = C02;
-    document.getElementById("C081").innerText = C08;
-    document.getElementById("D011").innerText = D01;
-    document.getElementById("D071").innerText = D07;
-    document.getElementById("D141").innerText = D14;
-    document.getElementById("D151").innerText = D15;
-    document.getElementById("D901").innerText = D90;
-    document.getElementById("D961").innerText = D96;
+    // document.getElementById("A001").innerText = A00;
+    // document.getElementById("A011").innerText = A01;
+    // document.getElementById("B001").innerText = B00;
+    // document.getElementById("C001").innerText = C00;
+    // document.getElementById("C011").innerText = C01;
+    // document.getElementById("C021").innerText = C02;
+    // document.getElementById("C081").innerText = C08;
+    // document.getElementById("D011").innerText = D01;
+    // document.getElementById("D071").innerText = D07;
+    // document.getElementById("D141").innerText = D14;
+    // document.getElementById("D151").innerText = D15;
+    // document.getElementById("D901").innerText = D90;
+    // document.getElementById("D961").innerText = D96;
     let A002 = A00;
     let A012 = A01;
     let B002 = B00;
@@ -270,9 +270,6 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// document.getElementById("btn_ok").onclick = function () {
-//   document.getElementById("vidu").style.display = 'none';
-// };
 
 function checkNumber() {
   var dtoan = document.getElementById("toan").value;
