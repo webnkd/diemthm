@@ -1,0 +1,352 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --border: #1316e2;
+    --label: #3b3b3b;
+    --nhan: rgb(34, 34, 34);
+    --input: #3939fa;
+    --output1: #3939fa;
+    --output2: rgb(236, 40, 40);
+    --bg1: #fdfdfd; /* Nhỏ hơn 768px */
+    --bg2: #c9c7c7; /* Lớn hơn 768px */
+    
+  }
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(39, 28, 247) 0%, rgb(35, 152, 175) 100%); 
+}
+
+.container{
+    z-index: 0;
+    width: 350px;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: var(--bg1);
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 1px 2px rgb(22, 22, 22);
+}
+
+.heading{
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #c71509;
+    font-weight: 800;
+
+}
+.heading::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 47px;
+    background-color: #e74c3c;
+    transition: .25s;
+    z-index: -1;
+}
+.heading:hover:before {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+    
+/*họ tên, số điện thoại */
+.thongtin{
+    padding: 5px;
+    display: flex;
+    justify-content:space-between;
+}
+.thongtin_field{
+    position: relative;
+    border-collapse: separate;
+    display: table;
+}
+
+.thongtin_field_input{
+    width: 160px;
+    height: 35px;
+    padding: 5px 10px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(248, 250, 250);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 7px;
+    color: var(--input);
+}
+.thongtin_field_input:focus {
+    border-color: var(--input);
+}
+
+
+/* Khu vực - Đối tượng */
+.kv_dt{
+    padding: 5px;
+    display: flex;
+    justify-content:space-between;
+}
+.kv_dt_field{
+    position: relative;
+    border-collapse: separate;
+    display: flex;
+}
+.kv_dt_field_label{
+    outline: none;
+    width: 60px;
+    height: 35px;
+    padding: 10px 5px;
+    font-size: 14px;
+    color: var(--label);   
+    text-align: center;
+    background-color: rgb(8, 182, 182);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 7px 0px 0px 7px;
+    border-right: none;
+}
+.kv_dt_field_input{
+    width: 100px;
+    height: 35px;
+    padding: 5px 5px;
+    font-size: 14px;
+    text-align: left;
+    outline: none;
+    background-color: rgb(106, 247, 247);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 0px 7px 7px 0px;
+    color: var(--input);
+}
+
+/* Nhập điểm */
+.diem{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+.diem_field{
+    position: relative;
+    border-collapse: separate;
+    display: flex;
+    padding-bottom: 5px;
+}
+.diem_field_label{
+    outline: none;
+    width: 45px;
+    height: 35px;
+    padding: 5px 5px;
+    font-size: 14px;
+    color: var(--label);   
+    text-align: center;
+    padding-top: 10px;
+    background-color: rgb(215, 218, 218);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 10px 0px 0px 10px;
+    border-right: none;
+}
+.diem_field_input{
+    width: 50px;
+    height: 35px;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-align: left;
+    outline: none;
+    background-color: rgb(248, 250, 250);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 0px 10px 10px 0px;
+    color: var(--input);  
+}
+
+/* Button */
+.btn{
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.btn_ok{
+    text-decoration: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #f01616;
+    cursor: pointer;
+    background-color: rgb(231, 217, 21);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 15px;
+    box-shadow: 2px 2px lightblue;
+}
+
+.btn_ok:hover{
+    background-color: rgb(221, 77, 10);
+    color: #f8f5f5;
+    scale: 1.15;
+    font-size: 20px;
+}
+.btn_reset{
+    text-decoration: none;
+    outline: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #f7f5f5;
+    cursor: pointer;
+    background-color: rgb(21, 42, 231);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 15px;
+    box-shadow: 2px 2px lightblue;
+}
+
+.btn_reset:hover{
+    background-color: rgb(233, 39, 207);
+    color: #181818;
+    scale: 1.15;
+    font-size: 20px;
+}
+
+/* Hiển thị kết quả */
+.ketqua1{
+    display: none;
+}
+.ketqua{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.ketqua_field{
+    position: relative;
+    border-collapse: separate;
+    display: flex;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.ketqua_field_label{
+    outline: none;
+    width: 45px;
+    height: 35px;
+    padding: 5px 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: var(--label);   
+    text-align: center;
+    background-color: rgb(215, 218, 218);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 10px 0px 0px 10px;
+    border-right: none;
+}
+.ketqua_field_label_dthm{
+    outline: none;
+    width: 45px;
+    height: 35px;
+    padding: 5px 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: var(--output1);   
+    text-align: center;
+    background-color: rgb(247, 250, 250);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 0px;
+    border-right: none;
+}
+.ketqua_field_label_dxt{
+    outline: none;
+    width: 45px;
+    height: 35px;
+    padding: 5px 5px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: var(--output2);   
+    text-align: center;
+    background-color: rgb(106, 247, 247);
+    border: 1px solid rgb(165, 163, 163);
+    border-radius: 0px 10px 10px 0px;
+}
+
+
+/*Độ rộng màn hình > 768px */
+@media only screen and (min-width: 768px){
+    .container{
+        width: 550px;
+        background-color: var(--bg2);
+        padding: 10px 0;
+        position: relative;
+        box-shadow: 4px 5px rgb(22, 22, 22);
+    }
+    .thongtin_field_input{
+        width: 200px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .kv_dt_field_label{
+        outline: none;
+        width: 80px;
+        height: 40px;
+        padding: 10px 5px;
+        font-size: 16px;
+    }
+    .kv_dt_field_input{
+        width: 120px;
+        height: 40px;
+        padding: 5px 5px;
+        font-size: 16px;
+    }
+    .diem_field_label{
+        outline: none;
+        width: 60px;
+        height: 40px;
+        padding: 5px 5px;
+        font-size: 16px;
+        color: var(--label);   
+        text-align: center;
+        padding-top: 10px;
+        background-color: rgb(215, 218, 218);
+        border: 1px solid rgb(165, 163, 163);
+        border-radius: 10px 0px 0px 10px;
+        border-right: none;
+    }
+    .diem_field_input{
+        width: 90px;
+        height: 40px;
+        padding: 6px 12px;
+        font-size: 16px;
+        text-align: left;
+        outline: none;
+        background-color: rgb(248, 250, 250);
+        border: 1px solid rgb(165, 163, 163);
+        border-radius: 0px 10px 10px 0px;
+        color: var(--input);  
+    }
+    .btn_ok:hover{
+        scale: 1.3;
+    }
+    .btn_reset:hover{
+        scale: 1.3;
+    }
+    .ketqua_field_label{
+        width: 60px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .ketqua_field_label_dthm{
+        width: 60px;
+        height: 40px;
+        font-size: 16px;
+        color: var(--label);   
+    }
+    .ketqua_field_label_dxt{
+        outline: none;
+        width: 60px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
